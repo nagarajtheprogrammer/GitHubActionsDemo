@@ -39,7 +39,7 @@ jobs:
     - name: 'Authorize'
       run: |
         echo username value ${{ secrets.GIT_DEMO_DEV_USERNAME }}
-        sfdx force:auth:jwt:grant --clientid=${{ secrets.CONSUMER_KEY }} --username=${{ secrets.USERNAME }} --jwtkeyfile server.key --setdefaultdevhubusername
+        sfdx force:auth:jwt:grant --clientid=${{ secrets.CONSUMER_KEY }} --username=${{ secrets.GIT_DEMO_DEV_USERNAME }} --jwtkeyfile server.key --setdefaultdevhubusername
     - name: 'Convert Metadata'
       run: sfdx force:source:convert --rootdir=force-app --outputdir=convert
     - name: 'Run Test on Metadata'
